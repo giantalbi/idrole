@@ -10,7 +10,7 @@
         do{
             let random = Math.floor(Math.random() * data.length);
             imgPath = data[random];
-        }while(imgPath.name == "CNAME" && imgPath.name == "index.html")
+        }while(imgPath.name == "CNAME" || imgPath.name == "index.html")
 
         document.getElementById('meme').src = imgPath.download_url;
       })()
