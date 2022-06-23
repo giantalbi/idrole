@@ -5,9 +5,13 @@
       (async () => {
         const response = await fetch('https://api.github.com/repos/samfreeman05/idrole/contents/');
         const data = await response.json();
-        let random = Math.floor(Math.random() * data.length);
-        let imgPath = data[random];
+        let imgPath;
         
+        do{
+            let random = Math.floor(Math.random() * data.length);
+            imgPath = data[random];
+        }while(imgPath.name == "CNAME")
+
         document.getElementById('meme').src = imgPath.download_url;
       })()
     </script>
