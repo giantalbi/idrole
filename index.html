@@ -7,10 +7,8 @@
         const data = await response.json();
         let random = Math.floor(Math.random() * data.length);
         let imgPath = data[random];
-        console.log(data);
-        console.log(imgPath);
         
-        // document.getElementById('meme')[0].src = imgPath;
+        document.getElementById('meme')[0].src = imgPath.download_url;
       })()
     </script>
   <body>
